@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "commonjs"
+	},
+	"files": [
+		"schedule.js",
+		"angular.min.js"
+	],
+	"jshint.enable": true,
+	"javascript.validate.enable": false
+}
