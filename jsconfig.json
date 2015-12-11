@@ -5,7 +5,8 @@
 	},
 	"files": [
 		"schedule.js",
-		"angular.min.js"
+		"angular.min.js",
+		"scheduleObject.js"
 	],
 	"jshint.enable": true,
 	"javascript.validate.enable": false

@@ -3,7 +3,6 @@
 		<meta charset="UTF-8">
 		<title>title</title>
 		<link rel = "stylesheet" type = "text/css" href = "bootstrap.min.css">
-		<link rel = "stylesheet" type = "text/css" href = "app.css">
 	</head>
 	<body ng-controller="StoreController as store">
 		<div class = "list-group" ng-repeat ="product in store.products | orderBy: '-price'">
@@ -32,6 +31,6 @@
 	<!-- include angular js framework that we downloaded -->
 	<script type="text/javascript" src = "angular.min.js"></script>
 	<!-- include out ap module -->
-	<script type="text/javascript" src = "app.js"></script>
+	<script type="text/javascript" src = "schedule.js"></script>
 	</body>
 </html>

@@ -105,6 +105,6 @@ function getNumberOfDays(sessionDays, day, dow, index) {
 	return numDays;
 }
 
-var schedule = new Schedule(configObject);
-schedule = JSON.stringify(schedule, null, 4)
-console.log(schedule);
+function getScheduleObject() {
+	return JSON.stringify(new Schedule(configObject), null, 4);
+}
