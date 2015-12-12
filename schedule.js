@@ -54,10 +54,10 @@ function createSessionsArray(date, sessionDays, numberOfSessions, weekNumber, br
 		}
 		date = getDate(date, sessionDays, day, dow, i, breakStartDate, resumeDate);
 		this.sessions.push({
-			"sessionNumber": i+1,
-			"sessionWeekDay": weekConversion[day],
-			"sessionDate": date,
-			"week": week
+			sessionNumber: i+1,
+			sessionWeekDay: weekConversion[day],
+			sessionDate: date,
+			week: week
 		});
 	}
 	return this.sessions;
