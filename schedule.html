@@ -1,10 +1,51 @@
-<html ng-app ="store">
+<html ng-app ="scheduler">
 	<head>
 		<meta charset="UTF-8">
-		<title>title</title>
+		<title>Scheduler</title>
 		<link rel = "stylesheet" type = "text/css" href = "bootstrap.min.css">
+
+		<!-- <link rel = "stylesheet" type = "text/css" href = "app.css"> -->
 	</head>
-	<body ng-controller="ScheduleController as schedule">		
+	<body ng-controller="ScheduleController as schedule">
+	<h3>CSSE490-01 - Web Services Development</h3>
+	<hr />
+	<h3>Winter 2015-16 (201620)</h3>
+
+	<table class="table">
+	<tr>
+		<td ng-repeat="scheduleComponentName in schedule.scheduleComponentNames">
+			{{scheduleComponentName}}
+		</td>
+	</tr>
+		<tr>
+			<td>
+				{{schedule.scheduleSession["week"]}}
+			</td>
+			<td>
+				{{schedule.scheduleSession["session"]}}
+				<p><em>{{schedule.scheduleSession["sessionDate"]}}</em></p>
+			</td>
+			<td ng-repeat="due in schedule.scheduleComponent.values">
+				{{due}}
+			</td>
+			<td ng-repeat="scheduleComponent in schedule.scheduleSession.scheduleComponents">
+				<!-- {{schedule.scheduleSession["scheduleComponents"][0]["values"]}} -->
+				<ul  ng-repeat="value in scheduleComponent.values">
+					<li>
+						{{value}}
+					</li>
+				</ul>
+			</td>
+			<td>
+				{{s[0]["sessionDate"]}}
+			</td>
+
+		</tr>
+	</table>
+
+	<!-- include angular js framework that we downloaded -->
+	</head>
+	<body ng-controller="ScheduleController as schedule">
 		<div class = "list-group" ng-repeat ="day in schedule.scheduleObject">
 			<div class = "list-group-item">
 				<h3>
@@ -18,9 +59,9 @@
 					<div>
 						<img ng-src = "{{product.images[0]}}">
 					</div>
-					
+
 					<ul class = "img-thumbnail clearfix">
-						<li class = "small-image pull-left thumbnail" 
+						<li class = "small-image pull-left thumbnail"
 							ng-repeat="image in product.images">
 							<img ng-src = "{{image}}">
 						</li>
@@ -28,8 +69,11 @@
 				</div> -->
 			</div>
 		</div>
+
 	<script type="text/javascript" src = "angular.min.js"></script>
 	<script type="text/javascript" src = "schedule.js"></script>
+		<script type="text/javascript" src = "app.js"></script>
+
 	<script type="text/javascript" src = "createSchedule.js"></script>
 	<script type="text/javascript" src = "scheduleObjects.js"></script>
 	</body>
