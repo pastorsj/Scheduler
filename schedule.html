@@ -1,80 +1,57 @@
-<html ng-app ="scheduler">
-	<head>
-		<meta charset="UTF-8">
-		<title>Scheduler</title>
-		<link rel = "stylesheet" type = "text/css" href = "bootstrap.min.css">
+<html ng-app="scheduler">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
-		<!-- <link rel = "stylesheet" type = "text/css" href = "app.css"> -->
-	</head>
-	<body ng-controller="ScheduleController as schedule">
-	<h3>CSSE490-01 - Web Services Development</h3>
-	<hr />
-	<h3>Winter 2015-16 (201620)</h3>
+    <!-- <link rel = "stylesheet" type = "text/css" href = "app.css"> -->
+</head>
+<body ng-controller="ScheduleController as schedule" class="text-center">
+<h3>CSSE490-01 - Web Services Development</h3>
+<hr/>
+<h3>Winter 2015-16 (201620)</h3>
 
-	<table class="table">
-	<tr>
-		<td ng-repeat="scheduleComponentName in schedule.scheduleComponentNames">
-			{{scheduleComponentName}}
-		</td>
-	</tr>
-		<tr>
-			<td>
-				{{schedule.scheduleSession["week"]}}
-			</td>
-			<td>
-				{{schedule.scheduleSession["session"]}}
-				<p><em>{{schedule.scheduleSession["sessionDate"]}}</em></p>
-			</td>
-			<td ng-repeat="due in schedule.scheduleComponent.values">
-				{{due}}
-			</td>
-			<td ng-repeat="scheduleComponent in schedule.scheduleSession.scheduleComponents">
-				<!-- {{schedule.scheduleSession["scheduleComponents"][0]["values"]}} -->
-				<ul  ng-repeat="value in scheduleComponent.values">
-					<li>
-						{{value}}
-					</li>
-				</ul>
-			</td>
-			<td>
-				{{s[0]["sessionDate"]}}
-			</td>
+<table class="table">
+    <tr>
+        <td ng-repeat="scheduleComponentName in schedule.scheduleComponentNames">
+            {{scheduleComponentName}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{schedule.scheduleSession["week"]}}
+        </td>
+        <td>
+            {{schedule.scheduleSession["session"]}}
+            <p><em>{{schedule.scheduleSession["sessionDate"]}}</em></p>
+        </td>
+        <td ng-repeat="due in schedule.scheduleComponent.values">
+            {{due}}
+        </td>
+        <td ng-repeat="scheduleComponent in schedule.scheduleSession.scheduleComponents">
+            <!-- {{schedule.scheduleSession["scheduleComponents"][0]["values"]}} -->
+            <ul>
+                <li ng-repeat="value in scheduleComponent.values"
+                    ng-bind-html="value">
 
-		</tr>
-	</table>
+                </li>
+            </ul>
+        </td>
+        <td>
+            {{s[0]["sessionDate"]}}
+        </td>
 
-	<!-- include angular js framework that we downloaded -->
-	</head>
-	<body ng-controller="ScheduleController as schedule">
-		<div class = "list-group" ng-repeat ="day in schedule.scheduleObject">
-			<div class = "list-group-item">
-				<h3>
-					{{day.sessions[0]}}
-				</h3>
-				<!-- <p>
-					<em class = "pull-right">{{product.price | currency}}</em>
-					{{product.description}}
-				</p>
-				<div class = "gallery">
-					<div>
-						<img ng-src = "{{product.images[0]}}">
-					</div>
+    </tr>
+</table>
 
-					<ul class = "img-thumbnail clearfix">
-						<li class = "small-image pull-left thumbnail"
-							ng-repeat="image in product.images">
-							<img ng-src = "{{image}}">
-						</li>
-					</ul>
-				</div> -->
-			</div>
-		</div>
+<!-- include angular js framework that we downloaded -->
 
-	<script type="text/javascript" src = "angular.min.js"></script>
-	<script type="text/javascript" src = "schedule.js"></script>
-		<script type="text/javascript" src = "app.js"></script>
 
-	<script type="text/javascript" src = "createSchedule.js"></script>
-	<script type="text/javascript" src = "scheduleObjects.js"></script>
-	</body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="schedule.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="angular-sanitize.min.js"></script>
+<script type="text/javascript" src="createSchedule.js"></script>
+<script type="text/javascript" src="scheduleObjects.js"></script>
+</body>
 </html>
