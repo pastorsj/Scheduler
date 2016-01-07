@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>
+        Exams
+    </h2>
+
+    <table class="row  text-center">
+        <tr>
+            <td class="col-sm-4">Exam</td>
+            <td class="col-sm-4">Date</td>
+            <td class="col-sm-4">Sample</td>
+        </tr>
+
+        <tr ng-repeat="exam in examComponents">
+            <td>{{exam.number}}</td>
+            <td>{{getSessionDate(exam.sessionDue)}}</td>
+            <td ng-bind-html="exam.sample"></td>
+        </tr>
+    </table>
+</div>

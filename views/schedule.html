@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="page-header text-center page-title">
+        {{header[0].value}} - {{header[1].value}}
+    </div>
+    <div class="page-header text-center page-title page-subtitle">
+        {{header[2].value}}
+    </div>
+    <h3>Course Description</h3>
+    <div class="description" ng-bind-html="header[3].value">
+    </div>
+
+    <!--<span>Session quick links: </span>-->
+    <!--<span ng-repeat="obj in object">-->
+    <!--<a href="#{{obj.session}}">{{obj.session}}</a>-->
+    <!--</span>-->
+    <table class="table">
+        <tr>
+            <td ng-repeat="scheduleComponentName in scheduleComponentNames"
+                class="text-center table-border">
+                {{scheduleComponentName}}
+            </td>
+        </tr>
+        <tr ng-repeat="obj in object">
+            <td class="text-center">
+                {{obj["week"]}}
+            </td>
+            <td class="text-center">
+                <a name={{obj.session}}>{{obj.session}}</a>
+                <p>{{obj["sessionDate"]}}</p>
+            </td>
+
+            <td ng-repeat="component in obj.scheduleComponents">
+                <ul>
+                    <li ng-repeat="value in component.values" ng-bind-html="value">
+                    </li>
+                </ul>
+            </td>
+            <td>
+                {{s[0]["sessionDate"]}}
+            </td>
+
+        </tr>
+    </table>
+
+</div>
+

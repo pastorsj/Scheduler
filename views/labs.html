@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>
+        Labs
+    </h2>
+
+    <table class="row text-center">
+        <tr>
+            <td class="col-sm-4">Lab</td>
+            <td class="col-sm-4">Topic</td>
+            <td class="col-sm-4">Due</td>
+        </tr>
+        <tr ng-repeat="lab in labComponents">
+            <td>{{lab.number}}</td>
+            <td><a href="{{lab.url}}">{{lab.name}}</a></td>
+            <td>{{getSessionDate(lab.sessionDue)}}</td>
+        </tr>
+
+    </table>
+</div>

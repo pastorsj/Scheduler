@@ -1,0 +1,50 @@
+body {
+    background-color: #ffdee5;
+    /*margin: 10px;*/
+}
+
+.page-title {
+    margin-top:5px;
+    font-weight: bold;
+    color: white;
+    background-color: palevioletred;
+    font-size: 22pt;
+    /*border-top: 3px solid darkred;*/
+    /*border-bottom: 3px solid darkred;*/
+    vertical-align: middle;
+    /*padding:5px;*/
+}
+
+.description{
+    font-size:15px;
+}
+.page-subtitle {
+    font-size: 18pt;
+    background-color: transparent;
+    color: darkred;
+    vertical-align: middle;
+}
+
+
+.table-border{
+    border-bottom:1px solid darkred;
+}
+
+table td{
+    border-bottom:1px solid darkred;
+
+}
+
+.main-body{
+    width:100%;
+}
+.left-panel{
+    width:20%;
+    float:left;
+}
+
+.right-panel{
+    width:80%;
+    float:right;
+}
+

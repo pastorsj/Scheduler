@@ -1,0 +1,23 @@
+<html ng-app="routingApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+<div class="main-body">
+    <div ng-include="'views/nav.html'" class="left-panel"></div>
+    <div ng-app="routingApp" class="right-panel">
+
+        <ng-view></ng-view>
+    </div>
+</div>
+
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="schedule.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="angular-route.min.js"></script>
+<script type="text/javascript" src="angular-sanitize.min.js"></script>
+</body>
+</html>
