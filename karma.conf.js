@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Jan 19 2016 21:11:32 GMT-0500 (Eastern Standard Time)
+// Generated on Tue Jan 19 2016 23:52:47 GMT-0500 (EST)
 
 module.exports = function(config) {
   config.set({
@@ -15,19 +15,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'node_modules/angular/angular.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        './*.js',
-        'tests/*Spec.js',
-
-        //Templates
-        '/views/*.html'
+      'node_modules/angular/angular.js',
+       'node_modules/angular-mocks/angular-mocks.js',
+       'node_modules/angular-route/angular-route.min.js',
+       'node_modules/angular-sanitize/angular-sanitize.min.js',
+       './*.js',
+       'tests/*Spec.js',
+       'views/*.html'
     ],
 
 
     // list of files to exclude
     exclude: [
-        "server.js"
+      'server.js',
+      'readFile.js'
     ],
 
 
